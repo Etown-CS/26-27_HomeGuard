@@ -19,3 +19,4 @@ No raw packet dumps, just a clear heads-up and enough context to decide what to 
 ***
 
 HomeGuard aims to sit in the gap between those two: real detection, explained simply.
+Here is a link to our wiki! : https://github.com/Etown-CS/26-27_HomeGuard.wiki.git
