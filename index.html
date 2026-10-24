@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeGuard</title>
-    <link rel="stylesheet" href="style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeGuard</title>
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <header>
-        <h1>HomeGuard</h1>
-        <p>Protecting your home, one sensor at a time.</p>
-    </header>
 
-    <main>
-        <h2>Dashboard</h2>
-    </main>
+  <header>
+    <h1>HomeGuard</h1>
+    <p>Protecting your home, one sensor at a time.</p>
+  </header>
 
-    <footer>
-    </footer>
+  <main>
+    <h2>Dashboard</h2>
+
+    <!-- Alert count summary -->
+    <div id="summary">
+      <p id="summary-text">Loading alerts...</p>
+    </div>
+
+    <!-- Alert cards will be injected here by JavaScript -->
+    <div id="alerts-container"></div>
+  </main>
+
+  <footer></footer>
+
+  <script>
+    fetch('alerts.json')
+      .then(res => res.json())
+      .then(alerts => {
+
+        const summary = document.getElementById('summary-text');
+        const container = document.getElementById('alerts-container');
+
+        // Update summary line
+        if (alerts.length === 0) {
+          summary.textContent = 'No alerts detected. Your network looks normal.';
+          return;
+        }
+
+        summary.textContent = `${alerts.length} alert(s) detected on your network.`;
+
+        // Build one card per alert
+        alerts.forEach(alert => {
+          const card = document.createElement('div');
+          card.classList.add('alert-card', alert.status.toLowerCase());
+
+          card.innerHTML = `
+            <div class="alert-header">
+              <span class="alert-status ${alert.status.toLowerCase()}">${alert.status}</span>
+              <span class="alert-time">${alert.timestamp}</span>
+            </div>
+            <p class="alert-explanation">${alert.explanation}</p>
+            <div class="alert-details">
+              <span>Device: ${alert.src_ip}</span>
+              <span>Destination: ${alert.dst_ip}</span>
+              <span>Protocol: ${alert.protocol}</span>
+              <span>Port: ${alert.dst_port}</span>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        document.getElementById('summary-text').textContent =
+          'Could not load alerts. Make sure alerts.json is in the same folder.';
+        console.error(err);
+      });
+  </script>
+
 </body>
 </html>

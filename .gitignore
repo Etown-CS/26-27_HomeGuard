@@ -1,1 +1,3 @@
-
+# Ignore macOS system files ("DS stuff")
+.DS_Store
+**/.DS_Store

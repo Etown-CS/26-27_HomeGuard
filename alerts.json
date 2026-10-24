@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "2026-10-23T21:18:46.722",
+    "src_ip": "192.168.1.24",
+    "dst_ip": "185.220.101.47",
+    "protocol": "TCP",
+    "dst_port": 8080,
+    "length": 9999,
+    "explanation": "Here's the explanation:\n\nA flagged event was detected when a device on your network (IP: 192.168.1.24) sent a large packet (9999 bytes) to a unknown destination (IP: 185.220.101.47) using the TCP protocol. This is a WARNING. You should check your network activity logs to see if there are any other suspicious connections and consider investigating the source of this traffic."
+  }
+]
