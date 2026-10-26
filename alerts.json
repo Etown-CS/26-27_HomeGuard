@@ -2,12 +2,122 @@
   {
     "id": 1,
     "status": "FLAGGED",
-    "timestamp": "2026-10-23T21:18:46.722",
-    "src_ip": "192.168.1.24",
-    "dst_ip": "185.220.101.47",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
     "protocol": "TCP",
-    "dst_port": 8080,
-    "length": 9999,
-    "explanation": "Here's the explanation:\n\nA flagged event was detected when a device on your network (IP: 192.168.1.24) sent a large packet (9999 bytes) to a unknown destination (IP: 185.220.101.47) using the TCP protocol. This is a WARNING. You should check your network activity logs to see if there are any other suspicious connections and consider investigating the source of this traffic."
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: The device at 192.168.137.1 is switching between activity and silence in an unusual pattern while communicating with 192.168.137.190. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 2,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 02:44:43 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.49.2.206",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 1876647,
+    "explanation": "WARNING: The device at 192.168.137.175 is sending data in unusually high bursts while communicating with 52.49.2.206. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: The device at 192.168.137.51 is switching between activity and silence in an unusual pattern while communicating with 3.91.171.235. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "WARNING: The device at 192.168.137.129 is switching between activity and silence in an unusual pattern while communicating with 52.239.141.196. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 08:54:02 AM",
+    "src_ip": "192.168.137.41",
+    "dst_ip": "109.95.152.166",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 5780,
+    "explanation": "WARNING: The device at 192.168.137.41 is switching between activity and silence in an unusual pattern while communicating with 109.95.152.166. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: The device at 192.168.137.129 is switching between activity and silence in an unusual pattern while communicating with 17.250.102.110. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: The device at 192.168.137.81 is sending data in an unusually high number of bursts while communicating with 192.168.137.254. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: The device at 192.168.137.174 is switching between activity and silence in an unusual pattern while communicating with 142.251.40.161. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 11:47:00 AM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "156.34.89.6",
+    "protocol": "UDP",
+    "dst_port": 50004,
+    "length": 892669,
+    "explanation": "WARNING: The device at 192.168.137.174 is sending data in unusually high bursts while communicating with 156.34.89.6. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: The device at 192.168.137.174 is switching between activity and silence in an unusual pattern while communicating with 54.151.100.178. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: The device at 192.168.137.77 is switching between activity and silence in an unusual pattern while communicating with 192.168.137.182. This doesn't match your network's normal pattern. If you don't recognize this activity, check which device this is and consider restarting or updating it."
   }
 ]

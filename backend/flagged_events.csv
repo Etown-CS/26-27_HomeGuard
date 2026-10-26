@@ -1,2 +1,12 @@
-timestamp,src_mac,dst_mac,src_ip,dst_ip,protocol,src_port,dst_port,length,tcp_flags,info,protocol_enc,flags_enc,anomaly_score,status
-2026-10-23T21:18:46.722,aa:bb:cc:dd:ee:01,ff:ff:ff:ff:ff:ff,192.168.1.24,185.220.101.47,TCP,37502,8080,9999,PA,ANOMALY: large packet to unknown foreign IP,1,3,-0.21853200922503402,flagged
+timestamp,src_ip,dst_ip,protocol,dst_port,length,anomaly_score,status,reason,true_label
+14/02/2023 12:52:02 PM,192.168.137.1,192.168.137.190,TCP,80,58298,-0.6614249268070641,flagged,switching between activity and silence in an unusual pattern,Web-Based/Uploading_Attack
+08/10/2022 02:44:43 PM,192.168.137.175,52.49.2.206,TCP,443,1876647,-0.6484394162253942,warning,sending data in unusually high bursts,Benign
+04/10/2022 01:55:10 PM,192.168.137.51,3.91.171.235,TCP,443,21951,-0.640754011815222,warning,switching between activity and silence in an unusual pattern,DDoS/ICMP_Fragmentation
+14/02/2023 12:10:24 PM,192.168.137.129,52.239.141.196,TCP,443,152006,-0.6348949174838739,warning,switching between activity and silence in an unusual pattern,Web-Based/XSS
+08/10/2022 08:54:02 AM,192.168.137.41,109.95.152.166,TCP,443,5780,-0.6270772358543091,warning,switching between activity and silence in an unusual pattern,Benign
+12/01/2023 11:21:45 AM,192.168.137.129,17.250.102.110,TCP,443,9763,-0.6226757579798498,warning,switching between activity and silence in an unusual pattern,Mirai/Greeth_Flood
+06/09/2022 01:01:19 PM,192.168.137.81,192.168.137.254,0,0,0,-0.6220014096493326,warning,sending data in an unusually high number of bursts,DDoS/ICMP_Flood
+18/10/2022 12:01:12 PM,192.168.137.174,142.251.40.161,UDP,443,10420,-0.6214185413164667,warning,switching between activity and silence in an unusual pattern,Spoofing/MITM_ArpSpoofing
+18/10/2022 11:47:00 AM,192.168.137.174,156.34.89.6,UDP,50004,892669,-0.6192157477034808,warning,sending data in unusually high bursts,Spoofing/MITM_ArpSpoofing
+04/10/2022 02:40:35 PM,192.168.137.174,54.151.100.178,TCP,443,0,-0.6163032800415403,warning,switching between activity and silence in an unusual pattern,DDoS/ICMP_Fragmentation
+02/08/2022 11:35:30 AM,192.168.137.77,192.168.137.182,TCP,57906,0,-0.6157212594188787,warning,switching between activity and silence in an unusual pattern,DoS/SYN_Flood
