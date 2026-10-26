@@ -1,5 +1,3 @@
-
-
 HomeGuard aims to sit in the gap between those two: real detection, explained simply.
 Here is a link to our wiki! : https://github.com/Etown-CS/26-27_HomeGuard.wiki.git
 
@@ -19,13 +17,53 @@ If pip is not installed on your Linux server, run: "sudo apt update && sudo apt 
 - python3 sniffer.py --list-ifaces
 - sudo python3 sniffer.py -i (interface) -c 50 -o capture.csv
 
+**Python dependencies:**
+```bash
+pip install scapy pandas scikit-learn ollama
+```
+
+**Ollama (for the LLM explanation layer):**
+- Download and install Ollama from ollama.com
+- Pull the Llama 3.2 3B model:
+```bash
+ollama pull llama3.2:3b
+```
+
 ## Setup
 
 The setup for the sniffer would just need to be ran before loading on the website locally.
 
+## Overall Setup
+
+1. Clone the repository and navigate to the project folder
+2. Install all Python dependencies listed above
+3. Install Ollama and pull the Llama 3.2 3B model
+4. Make sure Ollama is running before executing the LLM script
+
 ## Running
 
-- sudo python3 sniffer.py -i (interface) -c 50 -o capture.csv
+**Step 1 — Capture live network traffic (Linux only, requires sudo):**
+```bash
+sudo python3 sniffer.py -i (interface) -c 50 -o capture.csv
+```
+
+**Step 2 — Score traffic and flag anomalies:**
+```bash
+python3 isolation_forest.py
+```
+Output: `scored_traffic.csv` and `flagged_events.csv`
+
+**Step 3 — Generate plain-language explanations:**
+```bash
+python3 llm_explain.py
+```
+Output: `alerts.json`
+
+**Step 4 — View the dashboard:**
+```bash
+python -m http.server 8000
+```
+Then open your browser and go to `http://localhost:8000`
 
 # Deployment
 
