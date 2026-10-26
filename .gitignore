@@ -1,3 +1,6 @@
 # Ignore macOS system files ("DS stuff")
 .DS_Store
 **/.DS_Store
+
+# Ignore dataset
+IoT-DIAD2024/*IoT-DIAD2024/
