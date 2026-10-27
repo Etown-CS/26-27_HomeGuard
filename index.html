@@ -25,52 +25,9 @@
     <div id="alerts-container"></div>
   </main>
 
-  <footer></footer>
+  <footer>CS401 - HomeGuard | Farnaz (Teddy) Bazyar | Isabella La Face | Kylie Ueda</footer>
 
-  <script>
-    fetch('alerts.json')
-      .then(res => res.json())
-      .then(alerts => {
-
-        const summary = document.getElementById('summary-text');
-        const container = document.getElementById('alerts-container');
-
-        // Update summary line
-        if (alerts.length === 0) {
-          summary.textContent = 'No alerts detected. Your network looks normal.';
-          return;
-        }
-
-        summary.textContent = `${alerts.length} alert(s) detected on your network.`;
-
-        // Build one card per alert
-        alerts.forEach(alert => {
-          const card = document.createElement('div');
-          card.classList.add('alert-card', alert.status.toLowerCase());
-
-          card.innerHTML = `
-            <div class="alert-header">
-              <span class="alert-status ${alert.status.toLowerCase()}">${alert.status}</span>
-              <span class="alert-time">${alert.timestamp}</span>
-            </div>
-            <p class="alert-explanation">${alert.explanation}</p>
-            <div class="alert-details">
-              <span>Device: ${alert.src_ip}</span>
-              <span>Destination: ${alert.dst_ip}</span>
-              <span>Protocol: ${alert.protocol}</span>
-              <span>Port: ${alert.dst_port}</span>
-            </div>
-          `;
-
-          container.appendChild(card);
-        });
-      })
-      .catch(err => {
-        document.getElementById('summary-text').textContent =
-          'Could not load alerts. Make sure alerts.json is in the same folder.';
-        console.error(err);
-      });
-  </script>
+  <script src="backend/app.js"></script>
 
 </body>
 </html>
