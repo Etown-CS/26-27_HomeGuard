@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
+    "protocol": "TCP",
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: A device on your home network started intermittently communicating with another device, then stopped for a while. Make sure that both devices are properly connected and that there's no hardware issue causing this behavior."
+  },
+  {
+    "id": 2,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 02:44:43 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.49.2.206",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 1876647,
+    "explanation": "WARNING: A device on your home network has been sending a large amount of data to a server on the internet in quick bursts. Check the device's recent activity to see if it matches normal usage patterns."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: A device on your home network is intermittently connecting to a server on the internet with an unusual pattern of activity followed by silence. Next, check if the device has the latest software updates installed, as outdated software can cause unexpected behavior when connecting to servers."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "WARNING: A device on your home network occasionally connects to a server on the internet and then stops, creating an unusual pattern of activity. Next, check the device for any recent software updates or unusual applications that might explain this behavior."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 08:54:02 AM",
+    "src_ip": "192.168.137.41",
+    "dst_ip": "109.95.152.166",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 5780,
+    "explanation": "WARNING: A device on your home network was communicating with a server on the internet in an unusual pattern, alternating between active data transfer and periods of silence. Next, check the device's activity log to see which applications were in use during the active periods."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: A device on your home network was communicating with a server on the internet in a pattern that alternated between activity and silence unusually frequently. Make sure to check if this device has the latest software updates installed to prevent potential issues with its communication patterns."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network is sending data in quick bursts to another device on the network. Check the connection between these two devices to ensure they are interacting as expected and there is no unnecessary data transfer."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: A device on your home network was communicating with a server on the internet in an unpredictable pattern of activity and silence. Next, check the device's usage and ensure it has the latest security updates to avoid potential issues."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 11:47:00 AM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "156.34.89.6",
+    "protocol": "UDP",
+    "dst_port": 50004,
+    "length": 892669,
+    "explanation": "WARNING: A device on your home network is sending a lot of data to a server on the internet in short, rapid bursts, which is not typical behavior. Check the device's connected services to ensure they are all authorized and functioning correctly."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network was communicating with an internet server in an unexpected rhythm of active usage and inactivity. Make sure to check the software on the device for any updates that might address this unusual behavior."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network has been intermittently active, switching between normal activity and periods of silence in an unusual pattern. Check the device's settings or connections for any recently changed configurations that might explain this behavior."
+  }
+]

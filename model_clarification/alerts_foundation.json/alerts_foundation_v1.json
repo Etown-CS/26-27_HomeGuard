@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
+    "protocol": "TCP",
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: \"Your device with IP 192.168.137.1 is communicating with another device at 192.168.137.190 over TCP port 80, which is typically used for web browsing. The packet size of 58298 bytes is large, and the intermittent communication pattern is unusual, which might suggest an application or process is engaging in activity in an unexpected manner.\"\n\n\"Consider checking if any new applications have been installed recently on the device with IP 192.168.137.1, as this unusual communication pattern could be related to normal application behavior or could warrant a closer inspection for any unauthorized software.\""
+  },
+  {
+    "id": 2,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 02:44:43 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.49.2.206",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 1876647,
+    "explanation": "WARNING: Device with IP 192.168.137.175 has been sending data to a server at 52.49.2.206 using TCP on port 443 in unusually large bursts. This might indicate high data usage, so it's a good idea to check if any of your devices are performing an activity that requires significant data transfer, such as large file downloads or streaming."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: Device with IP 192.168.137.51 is communicating with a server at 3.91.171.235 over TCP port 443, with packet sizes varying significantly at 21951 bytes. This unusual pattern of activity followed by silence suggests the device might be transferring large files or engaging in a periodic process with the server. It's recommended to monitor the network traffic involving this device to understand its behavior better."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "WARNING: A device with the IP address 192.168.137.129 has been frequently communicating with a server at 52.239.141.196 using the secure protocol TCP over port 443. The unusual pattern of this device's activity, alternating between periods of communication and silence, warrants monitoring to ensure it's part of normal behavior.\n\nNext step: Observe and monitor the device's continued communication with the server to confirm its legitimacy and to ensure there are no unauthorized activities on your network."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 08:54:02 AM",
+    "src_ip": "192.168.137.41",
+    "dst_ip": "109.95.152.166",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 5780,
+    "explanation": "WARNING: The device with IP address 192.168.137.41 sent large packets to a server on the internet at 109.95.152.166 using TCP protocol on port 443. It exhibited an unusual pattern of alternating between active data transfer and periods of inactivity. Next step: Monitor the network activity of this device to ensure it's not participating in unexpected or unauthorized data transfers."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: The device at IP address 192.168.137.129 was communicating with a server on the internet at 17.250.102.110 using the standard secure web protocol (TCP port 443) and sending large packets (9763 bytes). The unusual pattern of alternating activity and silence raises the possibility of a device engaging in unusual internet behavior.\n\nTo investigate further, check the device's recent network activity to see if it matches the expected usage patterns for the household."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: The device with IP 192.168.137.81 is communicating with another device at 192.168.137.254 in a pattern of data bursts, which is not typical for normal network traffic.\n\nConsider checking the software and firmware on both devices for any recent updates or changes that could explain the unusual burst pattern in their communication."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: The device with IP 192.168.137.174 communicated with a server on the internet at 142.251.40.161 using UDP on port 443. The unusual pattern of alternating activity and silence suggests that this may be part of normal operations, but it's good practice to check if the device's software is up to date to ensure it's running securely.\n\nNext step: Verify the software on the device with IP 192.168.137.174 is up to date to ensure it's running securely."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 11:47:00 AM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "156.34.89.6",
+    "protocol": "UDP",
+    "dst_port": 50004,
+    "length": 892669,
+    "explanation": "WARNING: A device on your network with the IP address 192.168.137.174 sent large UDP packets, 892669 bytes, in quick bursts to a server with the IP address 156.34.89.6 on the internet. This behavior is unusual for typical network traffic. Consider reviewing the device's recent activities to ensure it hasn't been compromised."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: Your device with IP address 192.168.137.174 was observed communicating with a server on the internet at 54.151.100.178 on port 443, but the packets were unusually small at 0 bytes each. The communication pattern changed frequently between active and silent periods, which might be unusual for typical network behavior. It's recommended to check if any new or unfamiliar devices have been added to your network recently."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: \"A device with the IP address 192.168.137.77 was attempting to send empty TCP packets to another device at 192.168.137.182 on port 57906, displaying an unusual activity pattern of silence and activity alternation.\"\n \n\"The next step could be to check if both devices are functioning correctly and if any new software or services are running on the device with IP 192.168.137.77.\""
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
+    "protocol": "TCP",
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: Sentence 1: Device 192.168.137.1 was sending large packets to device 192.168.137.190 on port 80 in an unusual pattern, alternating between active and silent periods. Sentence 2: Check the software on both devices for any recent updates or new installations that might explain the unusual traffic pattern."
+  },
+  {
+    "id": 2,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 02:44:43 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.49.2.206",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 1876647,
+    "explanation": "WARNING: Sentence 1: A device on your home network was sending very large amounts of data to a server on the internet, in quick bursts, which isn't typical behavior for most everyday activities. Sentence 2: Check if this activity is expected, such as large file transfers or online backups, and if not, monitor the device for further unusual activities."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: Sentence 1: Your device connected to a server on the internet using a standard secure protocol (TCP on port 443), and the data sent was quite large at 21951 bytes. The connection pattern was sporadic, alternating between active and silent periods."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "WARNING: Sentence 1: A device on your network was communicating with a server on the internet, sending large packets of data, and then stopping for a bit before repeating this pattern. Sentence 2: Check if the device is known to you and regularly communicate with the internet."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 08:54:02 AM",
+    "src_ip": "192.168.137.41",
+    "dst_ip": "109.95.152.166",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 5780,
+    "explanation": "WARNING: Sentence 1: Device 192.168.137.41 was communicating with a server on the internet at 109.95.152.166 using the common internet protocol TCP over port 443, which is usually used for secure web browsing. The connection pattern was irregular, showing periods of activity followed by unexpected silence."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: Sentence 1: Your device at address 192.168.137.129 was communicating with a server on the internet at address 17.250.102.110 over a secure protocol (TCP) on port 443, and the size of the data sent was 9763 bytes. Suddenly, this communication stopped and started in a pattern that seems unusual."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: Sentence 1: Your device with the IP address 192.168.137.81 has been sending a lot of data in short bursts to another device at 192.168.137.254, which is also on your home network. Sentence 2: Check to make sure that the device at 192.168.137.81 is not running software that it shouldn't be, such as unauthorized network services or games, which might explain the unusual behavior."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: Sentence 1: Your device at home was communicating with a server on the internet using a protocol called UDP over port 443, which is commonly used for secure connections. The communication was sporadic, switching between active and inactive periods."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 11:47:00 AM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "156.34.89.6",
+    "protocol": "UDP",
+    "dst_port": 50004,
+    "length": 892669,
+    "explanation": "WARNING: Sentence 1: Your device at 192.168.137.174 is sending large amounts of data very quickly to a server on the internet at 156.34.89.6, using UDP on port 50004. Sentence 2: Check if any new software was recently installed that might be using this connection and ensure it's from a trusted source."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: Sentence 1: Your device at 192.168.137.174 was occasionally connecting to a server at 54.151.100.178 on port 443, but the pattern of these connections was irregular and intermittent. Sentence 2: Check if any new apps or services have been installed recently that might be causing these connections, as they could be related to the unusual pattern observed."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: Sentence 1: A device at address 192.168.137.77 occasionally sends data to another device at 192.168.137.182 using TCP on port 57906, but this communication is irregular and alternates between active and inactive periods. Sentence 2: Check the devices connected to your network to ensure they are recognized and expected, and consider updating their software to the latest versions for better security."
+  }
+]

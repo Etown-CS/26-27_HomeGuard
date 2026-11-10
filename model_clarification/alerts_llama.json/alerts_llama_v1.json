@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
+    "protocol": "TCP",
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: There was an unusual network activity detected on a device connected to your home network. The device sent a large amount of data to another device on the same network, which was previously quiet, and then suddenly went silent again."
+  },
+  {
+    "id": 2,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 02:44:43 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.49.2.206",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 1876647,
+    "explanation": "WARNING: I've detected a device on our network, 192.168.137.175, sending data in high bursts to a server on the internet at 52.49.2.206. To help maintain a stable network, I recommend checking the device's activity to ensure it's not causing any issues and adjusting its settings if necessary."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: There's been a strange pattern of activity on your network where one device (IP address 192.168.137.51) has been sending a large amount of data (21951 bytes) to a server on the internet (3.91.171.235) over a secure connection (TCP port 443). This unusual switching between activity and silence has caught our attention, and we recommend checking the device's activity to see if it's causing any issues."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "WARNING: Here are two short sentences explaining the network event to a non-technical home user:\n\nThere was a large packet of data sent to a server on the internet, which is a bit unusual since it's mostly used for quiet activities like browsing. We're going to take a closer look at this activity to understand what it might be and make sure everything is working as it should."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 08:54:02 AM",
+    "src_ip": "192.168.137.41",
+    "dst_ip": "109.95.152.166",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 5780,
+    "explanation": "WARNING: Here are two short sentences explaining the network event:\n\nThere was a lot of traffic coming from a device on your network to a server on the internet, using a secure protocol (TCP) and a common port (443). This unusual pattern of switching between activity and silence might be related to how the device is using the internet, and you may want to check the device's activity to understand what it's being used for."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: Here's a description of the network event for a non-technical home user:\n\n\"There was a large amount of traffic sent from your device at IP address 192.168.137.129 to a server on the internet at IP address 17.250.102.110. The traffic was using a secure connection protocol (TCP) and was related to a specific port (443), which is commonly used for secure communication. The amount of data being transferred was unusually large (9763 bytes) and the device's activity was switching between being active and quiet in an unusual pattern.\" \n\n\"Suggest checking to see if you have any applications or services running on your device that may be causing this unusual traffic."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: There's been an unusual burst of activity on your home network, with device 192.168.137.81 sending data to another device on the same network. You may want to check the device's activity to see if it's sending data to something unexpected, and consider investigating the device's connections to ensure everything is working as intended."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: Here's an explanation of the network event:\n\nYour home network has noticed a device sending a large amount of data to a server on the internet, which is unusual. You might want to check what this device is used for and see if it's running any unnecessary programs or services in the background."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 11:47:00 AM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "156.34.89.6",
+    "protocol": "UDP",
+    "dst_port": 50004,
+    "length": 892669,
+    "explanation": "WARNING: Here are two short sentences explaining the network event:\n\nA device on your home network, 192.168.137.174, has been sending a large amount of data to a server on the internet, 156.34.89.6, in bursts. You might want to review which device is making this large data transfer and consider investigating the purpose of this data transfer to ensure it's within your network's expected usage."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: Here are two short sentences explaining the network event to a non-technical home user:\n\nThere's been an unusual pattern of activity on one of your devices, where it's suddenly switching between doing things and being completely quiet. You might want to check in with the person using that device to see if everything is okay."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: I've noticed that one of your devices has been communicating with another device on your network in a pattern that's a bit unusual. This means that the device is still sending and receiving data to another device on your network, so it's worth keeping an eye on it to make sure it's working as expected."
+  }
+]

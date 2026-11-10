@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
+    "protocol": "TCP",
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: Someone tried to access a website on your network, but the activity stopped and then started again in an unusual pattern. You should check the website or application that the device was trying to access to see if everything is working correctly."
+  },
+  {
+    "id": 2,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 02:44:43 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.49.2.206",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 1876647,
+    "explanation": "WARNING: A device on your home network sent a large amount of data to a server on the internet, which is unusual because you typically don't send such big files over the internet unless you need to. The next step is to check the activity on that device to see what it was downloading and if it needs to be checked further."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: Someone has sent a large amount of data from your home network to a server on the internet, which might be unusual behavior. To help prevent this in the future, I recommend checking and updating your home network's security settings to ensure it's secure and private."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "WARNING: A device on your network sent a large amount of data to a server on the internet, and this activity was happening in a pattern that seemed unusual. To help prevent unexpected activity, please review and update the security settings on the device that sent the data to ensure it is allowed to communicate with the server and not accidentally block itself."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 08:54:02 AM",
+    "src_ip": "192.168.137.41",
+    "dst_ip": "109.95.152.166",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 5780,
+    "explanation": "WARNING: A device on your network sent a large amount of data to a server on the internet, which seemed to be switching between being active and not being active in an unusual pattern. Please check the device's activity to see if it's running a service or application that may be using up your internet data, and try to close any unnecessary programs or services."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: There was a unusual pattern of activity on your device, where it suddenly sent a large amount of data to a server on the internet, and then went quiet again. One next step is to restart your device to see if it makes the activity pattern repeat, and to help ensure everything is running smoothly."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: There was a lot of data sent from your device to another device on your home network, but it happened in very short periods of time, which is unusual. To check on this, you can use your router's web interface to review the device's activity and see if you can find any other unusual patterns."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: A device on your home network sent a large amount of data to a server on the internet, which is a normal part of its usual activity, but the pattern of activity and silence looked unusual. Your device's internet traffic is usually predictable, so this unexpected variation may indicate something is new or different."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 11:47:00 AM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "156.34.89.6",
+    "protocol": "UDP",
+    "dst_port": 50004,
+    "length": 892669,
+    "explanation": "WARNING: Someone on your network is sending a large amount of data to a server on the internet, which is unusual because the data is being sent in very high bursts. To help keep your network secure, consider checking the device that was sending the data to see if it needs to be restarted or if there are any other issues that might be causing it to act like this."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: There was a suspicious activity on one of your devices that's sending and receiving data to a server on the internet, specifically a switch between sending and not sending data. The next step is to check the device that's sending and receiving the data to see if it's doing something unusual or if it needs any attention."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: A device on your network sent unexpected data to another device on the same network, which was previously quiet, and the amount of data sent and received switched between a lot and nothing. You should check the activity on this other device to see if it's working as expected and if there's anything unusual going on there."
+  }
+]

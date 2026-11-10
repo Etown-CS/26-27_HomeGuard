@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
+    "protocol": "TCP",
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: A device on your home network was sending large amounts of data to another device on the same network over TCP port 80, then stopping unexpectedly. Check if the device receiving the data is performing its usual tasks or if it seems to be unresponsive."
+  },
+  {
+    "id": 2,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 02:44:43 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.49.2.206",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 1876647,
+    "explanation": "WARNING: A device on your home network is sending data in unusually large bursts to a server on the internet through the TCP protocol on port 443. Next, check if this behavior is expected by reviewing the recent activity of the device in question and ensuring it aligns with its typical usage patterns."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: A device on your home network has been sending unusually large data packets to a server on the internet, specifically a server using port 443, which is often used for secure connections. Next, check if the device is connected to a service you recognize and expect, as it might be interacting with unfamiliar or unexpected internet services."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "WARNING: A device on your home network occasionally sent large packets to a server on the internet, then became quiet. To ensure your network remains secure, regularly update the firmware of all your connected devices."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 08:54:02 AM",
+    "src_ip": "192.168.137.41",
+    "dst_ip": "109.95.152.166",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 5780,
+    "explanation": "WARNING: A device on your home network was connecting to a server on the internet using the common HTTPS protocol over port 443. The connection pattern showed sudden switches between active data transfer and periods of silence in an irregular manner."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: A device on your home network was sending large amounts of data, around 9763 bytes each time, to a server on the internet through the secure HTTPS protocol on port 443. Next, ensure that the device in question is up-to-date with its software and security patches to prevent potential issues with its communications."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network is sending data in rapid bursts to another device on the same network, which is unusual. Check the activity logs on both devices to see if this behavior is expected or if it matches any recent changes in their usage."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: A device on your home network sent large UDP packets to a server on the internet, typically associated with secure connections, but it alternated between sending data and going silent in a way that's not typical for normal network behavior. Check if other devices are showing similar patterns of activity and silence, as this could indicate unusual behavior that might need attention."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 11:47:00 AM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "156.34.89.6",
+    "protocol": "UDP",
+    "dst_port": 50004,
+    "length": 892669,
+    "explanation": "WARNING: A device on your home network sent a lot of data quickly to a server on the internet using a less common method. Check the device for any unusual applications that might explain the high burst of data transmission."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network was communicating with a server on the internet using a common protocol, but the communication pattern was unusual as it alternated between active and silent periods. Check the device\u2019s activity log to see if there are any unfamiliar applications or recent changes that could explain this behavior."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network started and stopped a connection with another device on the same network using TCP on port 57906 in an unusual pattern. Check the event log on the device that was communicating to see if it recognizes the activity and determine if it's expected behavior."
+  }
+]
