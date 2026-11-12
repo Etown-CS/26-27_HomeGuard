@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up | HomeGuard</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>HomeGuard</h1>
+    <p>Protecting your home, one sensor at a time.</p>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-card">
+      <h2>Create your account</h2>
+      <p class="auth-intro">Set up HomeGuard to watch the devices on your home network.</p>
+
+      <form id="signup-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="fname">First name</label>
+            <input id="fname" name="fname" type="text" autocomplete="given-name" maxlength="50" required>
+            <p class="field-error" id="fname-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="lname">Last name</label>
+            <input id="lname" name="lname" type="text" autocomplete="family-name" maxlength="50" required>
+            <p class="field-error" id="lname-error" hidden></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="255" required>
+          <p class="field-error" id="email-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required aria-describedby="password-hint">
+          <p class="field-hint" id="password-hint">At least 8 characters.</p>
+          <p class="field-error" id="password-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="confirm">Confirm password</label>
+          <input id="confirm" name="confirm" type="password" autocomplete="new-password" maxlength="128" required>
+          <p class="field-error" id="confirm-error" hidden></p>
+        </div>
+
+        <label class="show-password">
+          <input type="checkbox" id="show-password"> Show passwords
+        </label>
+
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+
+        <button type="submit" class="auth-button" id="submit">Create account</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+
+  <script src="backend/signup.js"></script>
+</body>
+</html>

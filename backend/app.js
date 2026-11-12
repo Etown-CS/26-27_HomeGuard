@@ -89,6 +89,30 @@
     ($('header') || document.body).appendChild(nav);
   }
 
+  // Auth tab: shows "Log out" when a session exists, otherwise "Login" (goes to login.html)
+  const navEl = $('.nav');
+  let authTab = null;
+  if (navEl) {
+    authTab = $('[data-action="login"], [data-action="logout"]', navEl);
+    if (!authTab) {
+      authTab = document.createElement('button');
+      authTab.type = 'button';
+      authTab.hidden = true;               // hidden until we know which label to show
+      navEl.appendChild(authTab);
+    }
+    syncAuthTab();
+  }
+  async function syncAuthTab() {
+    let loggedIn = false;
+    try {
+      const res = await fetch('/api/me', { credentials: 'same-origin', cache: 'no-store' });
+      loggedIn = res.ok;
+    } catch (err) { /* server unreachable: treat as logged out */ }
+    authTab.dataset.action = loggedIn ? 'logout' : 'login';
+    authTab.textContent = loggedIn ? 'Log out' : 'Login';
+    authTab.hidden = false;
+  }
+
   if (!$('#addDialog')) {
     const dlg = document.createElement('dialog');
     dlg.id = 'addDialog';
@@ -237,6 +261,7 @@
   async function load() {
     try {
       const res = await fetch(ALERTS_URL, { cache: 'no-store' });
+      if (res.status === 401) { window.location.href = 'login.html'; return; }
       if (!res.ok) throw new Error('alerts.json: HTTP ' + res.status);
       state.alerts = await res.json();
       state.error = false;
@@ -277,6 +302,12 @@
           state.devices = state.devices.filter(d => d.ip !== id);
           render();
         }
+        break;
+      case 'login': window.location.href = 'login.html'; break;
+      case 'logout':
+        fetch('/api/logout', { method: 'POST', credentials: 'same-origin' })
+          .catch(() => { /* leave the page either way */ })
+          .finally(() => { window.location.href = 'login.html'; });
         break;
       case 'add': $('#addDialog').showModal(); break;
       case 'close-add': $('#addDialog').close(); break;

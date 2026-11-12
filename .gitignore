@@ -4,3 +4,8 @@
 
 # Ignore dataset
 IoT-DIAD2024/*
+
+# Ignore database connection
+database/.env
+database/wallet/
+__pycache__/
