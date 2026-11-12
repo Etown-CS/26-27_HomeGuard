@@ -1,12 +1,14 @@
 timestamp,src_ip,dst_ip,protocol,dst_port,length,anomaly_score,status,reason,true_label
-14/02/2023 12:52:02 PM,192.168.137.1,192.168.137.190,TCP,80,58298,-0.6614249268070641,flagged,switching between activity and silence in an unusual pattern,Web-Based/Uploading_Attack
-08/10/2022 02:44:43 PM,192.168.137.175,52.49.2.206,TCP,443,1876647,-0.6484394162253942,warning,sending data in unusually high bursts,Benign
-04/10/2022 01:55:10 PM,192.168.137.51,3.91.171.235,TCP,443,21951,-0.640754011815222,warning,switching between activity and silence in an unusual pattern,DDoS/ICMP_Fragmentation
-14/02/2023 12:10:24 PM,192.168.137.129,52.239.141.196,TCP,443,152006,-0.6348949174838739,warning,switching between activity and silence in an unusual pattern,Web-Based/XSS
-08/10/2022 08:54:02 AM,192.168.137.41,109.95.152.166,TCP,443,5780,-0.6270772358543091,warning,switching between activity and silence in an unusual pattern,Benign
-12/01/2023 11:21:45 AM,192.168.137.129,17.250.102.110,TCP,443,9763,-0.6226757579798498,warning,switching between activity and silence in an unusual pattern,Mirai/Greeth_Flood
-06/09/2022 01:01:19 PM,192.168.137.81,192.168.137.254,0,0,0,-0.6220014096493326,warning,sending data in an unusually high number of bursts,DDoS/ICMP_Flood
-18/10/2022 12:01:12 PM,192.168.137.174,142.251.40.161,UDP,443,10420,-0.6214185413164667,warning,switching between activity and silence in an unusual pattern,Spoofing/MITM_ArpSpoofing
-18/10/2022 11:47:00 AM,192.168.137.174,156.34.89.6,UDP,50004,892669,-0.6192157477034808,warning,sending data in unusually high bursts,Spoofing/MITM_ArpSpoofing
-04/10/2022 02:40:35 PM,192.168.137.174,54.151.100.178,TCP,443,0,-0.6163032800415403,warning,switching between activity and silence in an unusual pattern,DDoS/ICMP_Fragmentation
-02/08/2022 11:35:30 AM,192.168.137.77,192.168.137.182,TCP,57906,0,-0.6157212594188787,warning,switching between activity and silence in an unusual pattern,DoS/SYN_Flood
+14/02/2023 12:52:02 PM,192.168.137.1,192.168.137.190,TCP,80,58298,-0.6601119405147697,flagged,switching between activity and silence in an unusual pattern,Web-Based/Uploading_Attack
+14/02/2023 12:10:24 PM,192.168.137.129,52.239.141.196,TCP,443,152006,-0.653921414499408,flagged,switching between activity and silence in an unusual pattern,Web-Based/XSS
+04/10/2022 01:55:10 PM,192.168.137.51,3.91.171.235,TCP,443,21951,-0.6495760024744621,warning,switching between activity and silence in an unusual pattern,DDoS/ICMP_Fragmentation
+07/10/2022 08:35:28 PM,192.168.137.175,18.201.5.172,TCP,443,2919030,-0.6467061286367637,warning,sending data in unusually high bursts,Benign
+07/10/2022 06:23:52 PM,192.168.137.175,52.31.220.16,TCP,443,2384062,-0.6414946464275504,warning,sending data in unusually high bursts,Benign
+06/09/2022 01:01:19 PM,192.168.137.81,192.168.137.254,0,0,0,-0.628453757399365,warning,sending data in an unusually high number of bursts,DDoS/ICMP_Flood
+25/10/2022 10:07:52 AM,192.168.137.123,192.168.137.65,TCP,56840,1460,-0.625932930785121,warning,switching between activity and silence in an unusual pattern,DDoS/ACK_Fragmentation
+02/08/2022 11:35:30 AM,192.168.137.77,192.168.137.182,TCP,57906,0,-0.6229210163873636,warning,switching between activity and silence in an unusual pattern,DoS/SYN_Flood
+12/01/2023 11:21:45 AM,192.168.137.129,17.250.102.110,TCP,443,9763,-0.6209940927111881,warning,switching between activity and silence in an unusual pattern,Mirai/Greeth_Flood
+18/10/2022 12:01:12 PM,192.168.137.174,142.251.40.161,UDP,443,10420,-0.6182058604111389,warning,switching between activity and silence in an unusual pattern,Spoofing/MITM_ArpSpoofing
+04/10/2022 02:40:35 PM,192.168.137.174,54.151.100.178,TCP,443,0,-0.6170002835118416,warning,switching between activity and silence in an unusual pattern,DDoS/ICMP_Fragmentation
+08/10/2022 04:25:10 PM,192.168.137.83,192.168.137.58,TCP,53862,7485,-0.6165113851802192,warning,switching between activity and silence in an unusual pattern,Benign
+08/10/2022 12:38:30 PM,192.168.137.83,54.225.152.58,TCP,443,16814,-0.6150138879393873,warning,switching between activity and silence in an unusual pattern,Benign

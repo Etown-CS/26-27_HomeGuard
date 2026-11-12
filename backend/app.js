@@ -10,8 +10,8 @@
 (function () {
   'use strict';
 
-  const ALERTS_URL = '../alerts.json';
-  const DEVICES_URL = 'devices.json';
+  const ALERTS_URL = '/../alerts.json';
+  const DEVICES_URL = '/../devices.json';
   const POLL_MS = 5000;
 
   const state = { alerts: [], devices: [], error: false, view: 'dashboard', selected: null, q: '', filter: 'all' };
