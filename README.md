@@ -1,5 +1,5 @@
 HomeGuard aims to sit in the gap between those two: real detection, explained simply.
-Here is a link to our wiki! : https://github.com/Etown-CS/26-27_HomeGuard.wiki.git
+Here is a link to our wiki! : https://github.com/Etown-CS/26-27_HomeGuard/wiki
 
 # HomeGuard
 
@@ -11,23 +11,29 @@ Most alerts from security tools are cryptic logs meant for analysts. HomeGuard t
 ## External Requirements
 
 For the Sniffer.py, it needs to run on a Linux CLI:
-- pip install scapy
-If pip is not installed on your Linux server, run: "sudo apt update && sudo apt install python3-pip -y"
+- ```pip install scapy```
+If pip is not installed on your Linux server, run: ```sudo apt update && sudo apt install python3-pip -y```
 
 - python3 sniffer.py --list-ifaces
 - sudo python3 sniffer.py -i (interface) -c 50 -o capture.csv
 
 **Python dependencies:**
 ```bash
-pip install scapy pandas scikit-learn ollama
-```
-
-**Ollama (for the LLM explanation layer):**
-- Download and install Ollama from ollama.com
-- Pull the Llama 3.2 3B model:
 ```bash
-ollama pull llama3.2:3b
+pip install scapy pandas scikit-learn==1.8.0 ollama
 ```
+The saved model was trained with scikit-learn 1.8.0, so use that version to avoid load warnings.
+
+**Ollama (runs the language model locally):**
+- Download and install Ollama from ollama.com and make sure it is running.
+- Pull a model:
+```bash
+ollama pull dr-ry/foundation-sec-8b-instruct-chat-GGUF   # Foundation-Sec-8B-Instruct, about 4.9 GB
+ollama pull llama3.2:3b                                  # Llama 3.2 3B, about 2 GB
+```
+Choose the active model by editing the `MODEL` line near the top of `backend/llm_explain.py`.
+
+Note: do not pull `FenkoHQ/Foundation-Sec-8B:latest`. It is a 16 GB unquantized base model that will not fit on most laptops.
 
 ## Setup
 
@@ -44,18 +50,18 @@ The setup for the sniffer would just need to be ran before loading on the websit
 
 **Step 1 — Capture live network traffic (Linux only, requires sudo):**
 ```bash
-sudo python3 sniffer.py -i (interface) -c 50 -o capture.csv
+sudo python sniffer.py -i (interface) -c 50 -o capture.csv
 ```
 
 **Step 2 — Score traffic and flag anomalies:**
 ```bash
-python3 isolation_forest.py
+python score_flows.py
 ```
-Output: `scored_traffic.csv` and `flagged_events.csv`
+Output: `scored_flows.csv` and `flagged_events.csv`
 
-**Step 3 — Generate plain-language explanations:**
+**Step 3 — Generate plain-language explanations (Ollama must be running):**
 ```bash
-python3 llm_explain.py
+python llm_explain.py
 ```
 Output: `alerts.json`
 

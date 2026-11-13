@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:52:02 PM",
+    "src_ip": "192.168.137.1",
+    "dst_ip": "192.168.137.190",
+    "protocol": "TCP",
+    "dst_port": 80,
+    "length": 58298,
+    "explanation": "RED FLAG: A device on your home network suddenly sent a large amount of data to another device on your network in a rapid and unusual pattern, almost like the device was trying to send a lot of information all at once. To check if everything is okay, you can try restarting the device that sent the data to see if it resolves the issue."
+  },
+  {
+    "id": 2,
+    "status": "FLAGGED",
+    "timestamp": "14/02/2023 12:10:24 PM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "52.239.141.196",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 152006,
+    "explanation": "RED FLAG: A device on your home network sent a lot of data to a server on the internet, but then suddenly stopped sending anything, only to start sending again after a pause. You can check the device's activity logs to see what it was doing when it sent so much data and why it stopped."
+  },
+  {
+    "id": 3,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 01:55:10 PM",
+    "src_ip": "192.168.137.51",
+    "dst_ip": "3.91.171.235",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 21951,
+    "explanation": "WARNING: A device on your home network sent a large amount of data to a server on the internet, but the activity stopped suddenly without any clear reason. This unusual behavior is a good opportunity to review the device's usage and activity to ensure it's being used as expected."
+  },
+  {
+    "id": 4,
+    "status": "WARNING",
+    "timestamp": "07/10/2022 08:35:28 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "18.201.5.172",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 2919030,
+    "explanation": "WARNING: A device on your home network has sent a large amount of data to the internet in short bursts, which may be sending more data than usual. You can check the device's usage patterns to see if there's a way to limit or control its internet activity to prevent similar bursts in the future."
+  },
+  {
+    "id": 5,
+    "status": "WARNING",
+    "timestamp": "07/10/2022 06:23:52 PM",
+    "src_ip": "192.168.137.175",
+    "dst_ip": "52.31.220.16",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 2384062,
+    "explanation": "WARNING: A device on your home network sent a large amount of data to a server on the internet in short bursts, which is unusual because data is typically sent in smaller amounts over a longer period. To help prevent this from happening again in the future, you can consider setting up traffic limits on your router to monitor and control data usage by your devices."
+  },
+  {
+    "id": 6,
+    "status": "WARNING",
+    "timestamp": "06/09/2022 01:01:19 PM",
+    "src_ip": "192.168.137.81",
+    "dst_ip": "192.168.137.254",
+    "protocol": "0",
+    "dst_port": 0,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network sent a large amount of data to another device on your home network in short bursts. You should check the devices that are sending and receiving the data to see if there's anything unexpected or if they need to be updated or restarted."
+  },
+  {
+    "id": 7,
+    "status": "WARNING",
+    "timestamp": "25/10/2022 10:07:52 AM",
+    "src_ip": "192.168.137.123",
+    "dst_ip": "192.168.137.65",
+    "protocol": "TCP",
+    "dst_port": 56840,
+    "length": 1460,
+    "explanation": "WARNING: A device on your home network sent traffic to another device on your home network, but the pattern of the activity looked unusual, with a sudden switch between being active and silent. Please check the app or software that was running on the device that sent the traffic to make sure it is still active and running as expected."
+  },
+  {
+    "id": 8,
+    "status": "WARNING",
+    "timestamp": "02/08/2022 11:35:30 AM",
+    "src_ip": "192.168.137.77",
+    "dst_ip": "192.168.137.182",
+    "protocol": "TCP",
+    "dst_port": 57906,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network sent traffic to another device on your network that looked like it was changing between activity and silence in an unusual pattern. You can check the device that sent the traffic to see if it's still active and running, and make sure it's not causing any other unusual behavior."
+  },
+  {
+    "id": 9,
+    "status": "WARNING",
+    "timestamp": "12/01/2023 11:21:45 AM",
+    "src_ip": "192.168.137.129",
+    "dst_ip": "17.250.102.110",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 9763,
+    "explanation": "WARNING: A device on your home network has sent data to a server on the internet, and the communication pattern looks like it's switching between activity and silence in an unusual way. You can check the device's activity history to see if there's more context about why it made this sudden change, so you can investigate further."
+  },
+  {
+    "id": 10,
+    "status": "WARNING",
+    "timestamp": "18/10/2022 12:01:12 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "142.251.40.161",
+    "protocol": "UDP",
+    "dst_port": 443,
+    "length": 10420,
+    "explanation": "WARNING: A device on your home network is sending a lot of traffic to the internet in a way that doesn't seem very active, switching between lots of small actions and then being completely quiet. You can try checking the device's logs to see what it was doing when it was active, to help you understand what's going on and potentially identify what's causing the unusual pattern."
+  },
+  {
+    "id": 11,
+    "status": "WARNING",
+    "timestamp": "04/10/2022 02:40:35 PM",
+    "src_ip": "192.168.137.174",
+    "dst_ip": "54.151.100.178",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 0,
+    "explanation": "WARNING: A device on your home network sent data to a server on the internet, and its activity pattern looked unusual, with periods of activity followed by long periods of inactivity. To help HomeGuard understand what's happening, please check the device that made the unusual request to make sure it's up to date with the latest software and security updates."
+  },
+  {
+    "id": 12,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 04:25:10 PM",
+    "src_ip": "192.168.137.83",
+    "dst_ip": "192.168.137.58",
+    "protocol": "TCP",
+    "dst_port": 53862,
+    "length": 7485,
+    "explanation": "WARNING: A device on your home network sent traffic to another device on your network, but the activity on that device seemed to be inactive for longer periods than usual. To help figure out what's going on, try checking the device that received the traffic to see if it's being used by something you recognize."
+  },
+  {
+    "id": 13,
+    "status": "WARNING",
+    "timestamp": "08/10/2022 12:38:30 PM",
+    "src_ip": "192.168.137.83",
+    "dst_ip": "54.225.152.58",
+    "protocol": "TCP",
+    "dst_port": 443,
+    "length": 16814,
+    "explanation": "WARNING: A device on your home network has sent a lot of traffic to a server on the internet in a pattern that looks like it's switching between being active and quiet. You can check if this is a normal pattern by checking what the device was doing when it was active, to see if it was sending data to the server or just idle."
+  }
+]
