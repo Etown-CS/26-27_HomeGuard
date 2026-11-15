@@ -2,25 +2,32 @@
 HomeGuard web app (Flask).
 
 Serves the site and the login / sign-up API, backed by the Oracle database.
+When it starts it also reads backend/flagged_events.csv and runs the LLM (backend/llm_explain.py)
+for any events that are not in the database yet. Nothing is written to alerts.json any more.
 
-    pip install -r backend/requirements.txt
-    python3 backend/test_connection.py     # check the database connection first
-    python3 backend/app.py                 # then open http://localhost:5000
+    pip install -r database/requirements.txt
+    python3 database/test_connection.py     # check the database connection first
+    python3 database/app.py                 # then open http://localhost:5000
+    (start Ollama first if you want real LLM explanations)
 
 Routes
-    GET  /                    dashboard (login required)
+    GET  /                    landing page (public)
+    GET  /dashboard           dashboard (login required)
     GET  /login.html, /signup.html
-    GET  /alerts.json         alert data (login required)
-    GET  /backend/app.js, login.js, signup.js   the page scripts (nothing else in backend/ is served)
+    GET  /backend/app.js, login.js, signup.js, landing.js   the page scripts (nothing else in backend/ is served)
     POST /api/signup          {fname, lname, email, password}
     POST /api/login           {email, password}
     POST /api/logout
     GET  /api/me              current user, or 401
+    GET  /api/alerts          this user's flagged events (login required)
+    GET  /api/devices         this user's devices (login required)
 """
 
 import logging
 import os
 import re
+import sys
+import threading
 import time
 from datetime import timedelta
 from pathlib import Path
@@ -29,14 +36,16 @@ import oracledb
 from flask import Flask, abort, jsonify, redirect, request, send_from_directory, session
 from werkzeug.security import check_password_hash, generate_password_hash
 
-import db  # loads backend/.env
+import db  # loads database/.env
 
 ROOT = Path(__file__).resolve().parent.parent      # the project folder (index.html lives here)
+sys.path.insert(0, str(ROOT / "backend"))
+import llm_explain  # noqa: E402  (backend/llm_explain.py)
 
 app = Flask(__name__, static_folder=None)           # static files are served only by the routes below
 app.secret_key = os.getenv("SECRET_KEY", "").strip()
 if not app.secret_key:
-    raise RuntimeError("SECRET_KEY is missing. Add it to backend/.env (see .env.example).")
+    raise RuntimeError("SECRET_KEY is missing. Add it to database/.env.")
 app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SAMESITE="Lax",
@@ -68,6 +77,36 @@ def _locked(email) -> bool:
     recent = [t for t in _fails.get(_key(email), []) if now - t < LOCK_SECONDS]
     _fails[_key(email)] = recent
     return len(recent) >= MAX_FAILS
+
+
+# ---------------------------------------------------------------
+# background import: flagged_events.csv -> LLM -> database
+# Runs at startup and again after each sign-up / login, in a background thread so the
+# site stays responsive while the LLM works. Only events not yet saved are explained.
+# ---------------------------------------------------------------
+_ingest_lock = threading.Lock()
+_ingest_requested = threading.Event()
+
+
+def _ingest_worker():
+    try:
+        while _ingest_requested.is_set():
+            _ingest_requested.clear()
+            try:
+                llm_explain.process_new_events()
+            except Exception:                                    # never let the import take the site down
+                log.exception("Importing flagged events failed")
+    finally:
+        _ingest_lock.release()
+        if _ingest_requested.is_set():                           # a request arrived while finishing
+            kick_ingest()
+
+
+def kick_ingest():
+    """Start (or queue) an import of new events. Safe to call any time."""
+    _ingest_requested.set()
+    if _ingest_lock.acquire(blocking=False):
+        threading.Thread(target=_ingest_worker, name="ingest", daemon=True).start()
 
 
 # ---------------------------------------------------------------
@@ -105,7 +144,7 @@ def database_down(err):
 def security_headers(resp):
     resp.headers["X-Content-Type-Options"] = "nosniff"
     resp.headers["X-Frame-Options"] = "DENY"
-    if request.path.startswith("/api/") or request.path == "/alerts.json":
+    if request.path.startswith("/api/"):
         resp.headers["Cache-Control"] = "no-store"
     return resp
 
@@ -114,10 +153,19 @@ def security_headers(resp):
 # pages and static files (only these are served; backend/ and .env are never exposed)
 # ---------------------------------------------------------------
 @app.get("/")
-@app.get("/index.html")
+def landing_page():
+    return send_from_directory(ROOT, "landing.html")
+
+
+@app.get("/dashboard")
 @login_required_page
-def index():
+def dashboard():
     return send_from_directory(ROOT, "index.html")
+
+
+@app.get("/index.html")
+def old_dashboard_url():
+    return redirect("/dashboard")
 
 
 @app.get("/login.html")
@@ -130,11 +178,6 @@ def signup_page():
     return send_from_directory(ROOT, "signup.html")
 
 
-@app.get("/alerts.json")
-@login_required_api
-def alerts_json():
-    return send_from_directory(ROOT, "alerts.json")
-
 @app.get("/style/<path:name>")
 def style_files(name):
     return send_from_directory(ROOT / "style", name)
@@ -142,7 +185,7 @@ def style_files(name):
 
 # The two page scripts live in backend/ next to the server code. Only these exact files are
 # served from that folder; everything else there (.env, wallet/, db.py, ...) stays private.
-BACKEND_PUBLIC_FILES = {"app.js", "login.js", "signup.js"}
+BACKEND_PUBLIC_FILES = {"app.js", "landing.js", "login.js", "signup.js"}
 
 
 @app.get("/backend/<name>")
@@ -177,6 +220,7 @@ def signup():
         db.create_user(fname, lname, email, generate_password_hash(password))
     except db.EmailTaken:
         return error("An account with that email already exists.", 409)
+    kick_ingest()                                    # the new account gets the existing events
     return jsonify({"ok": True}), 201
 
 
@@ -202,6 +246,7 @@ def login():
     session.clear()
     session["user_id"] = user["user_id"]
     session.permanent = True
+    kick_ingest()                                    # pick up any new rows in the CSV
     return jsonify({"ok": True, "fname": user["fname"]})
 
 
@@ -221,6 +266,19 @@ def me():
     return jsonify({k: user[k] for k in ("user_id", "fname", "lname", "email")})
 
 
+@app.get("/api/alerts")
+@login_required_api
+def api_alerts():
+    return jsonify(db.list_alerts(session["user_id"]))
+
+
+@app.get("/api/devices")
+@login_required_api
+def api_devices():
+    return jsonify(db.list_devices(session["user_id"]))
+
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
+    kick_ingest()                                    # read the CSV and run the LLM on new events
     app.run(host="127.0.0.1", port=int(os.getenv("PORT", "5000")), debug=False)

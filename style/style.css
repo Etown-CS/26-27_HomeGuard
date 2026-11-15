@@ -498,3 +498,87 @@ dialog .row { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20
     gap: 0;
   }
 }
+
+.landing {
+  display: flex;
+  justify-content: center;
+  padding-top: 48px;
+}
+
+.landing-card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 1px 2px rgba(22, 35, 28, 0.04);
+}
+
+.landing-card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.landing-text {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.landing-welcome {
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.landing-button {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.landing-button:hover {
+  background: var(--bg);
+}
+
+.landing-button.primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.landing-button.primary:hover {
+  background: #2c4a3a;
+}
+
+.landing-button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .landing {
+    padding-top: 24px;
+  }
+
+  .landing-card {
+    padding: 22px;
+  }
+
+  .landing-button {
+    width: 100%;
+    text-align: center;
+  }
+}

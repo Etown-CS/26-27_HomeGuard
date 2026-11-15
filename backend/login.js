@@ -14,7 +14,7 @@
   'use strict';
 
   const LOGIN_URL = '/api/login';
-  const AFTER_LOGIN = '/';          // Flask serves the dashboard at / once you are logged in
+  const AFTER_LOGIN = '/dashboard';          // the dashboard page (the landing page is at /)
 
   const $ = id => document.getElementById(id);
   const form = $('login-form');

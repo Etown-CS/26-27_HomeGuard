@@ -1,8 +1,9 @@
 /* HomeGuard: backend/app.js
    Data
-   - alerts.json   (required)  [{id, status, timestamp, src_ip, dst_ip, protocol, dst_port, length, explanation}]
-   - devices.json  (optional)  [{name, type, ip, last_active}]
-     If devices.json is missing, devices are derived from the src_ip values in alerts.json.
+   - GET /api/alerts   [{id, status, timestamp, src_ip, dst_ip, protocol, dst_port, length, explanation}]
+   - GET /api/devices  [{id, name, type, ip, last_active}]
+   Both come from the Oracle database (saved there by backend/llm_explain.py) and need a login.
+   If a device has alerts but is not in the device list, it is derived from the alerts' src_ip.
 
    Pause / Mark as safe / Add / Remove only live in the page for now (reset on reload).
    Wire them to Flask routes when the backend is ready.
@@ -10,8 +11,8 @@
 (function () {
   'use strict';
 
-  const ALERTS_URL = '/../alerts.json';
-  const DEVICES_URL = '/../devices.json';
+  const ALERTS_URL = '/api/alerts';
+  const DEVICES_URL = '/api/devices';
   const POLL_MS = 5000;
 
   const state = { alerts: [], devices: [], error: false, view: 'dashboard', selected: null, q: '', filter: 'all' };
@@ -19,7 +20,7 @@
   const paused = new Set();    // device IPs paused
   const removed = new Set();   // device IPs removed
   const added = [];            // devices added by hand
-  let fileDevices = null;      // last devices.json contents
+  let fileDevices = null;      // last /api/devices response
 
   /* ---------- helpers ---------- */
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -139,7 +140,7 @@
     container.innerHTML = '';
 
     if (state.error) {
-      summary.textContent = 'Could not load alerts. Make sure alerts.json is in the same folder.';
+      summary.textContent = 'Could not load alerts. Check that the server is running, then refresh the page.';
       return;
     }
     if (state.alerts.length === 0) {
@@ -262,7 +263,7 @@
     try {
       const res = await fetch(ALERTS_URL, { cache: 'no-store' });
       if (res.status === 401) { window.location.href = 'login.html'; return; }
-      if (!res.ok) throw new Error('alerts.json: HTTP ' + res.status);
+      if (!res.ok) throw new Error('/api/alerts: HTTP ' + res.status);
       state.alerts = await res.json();
       state.error = false;
     } catch (err) {
@@ -273,7 +274,7 @@
     try {
       const res = await fetch(DEVICES_URL, { cache: 'no-store' });
       if (res.ok) file = await res.json();
-    } catch (err) { /* devices.json is optional */ }
+    } catch (err) { /* devices are optional: they can be derived from the alerts */ }
     fileDevices = file;
     state.devices = buildDevices(file);
 
@@ -307,7 +308,7 @@
       case 'logout':
         fetch('/api/logout', { method: 'POST', credentials: 'same-origin' })
           .catch(() => { /* leave the page either way */ })
-          .finally(() => { window.location.href = 'login.html'; });
+          .finally(() => { window.location.href = '/'; });
         break;
       case 'add': $('#addDialog').showModal(); break;
       case 'close-add': $('#addDialog').close(); break;
