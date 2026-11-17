@@ -37,7 +37,7 @@ Note: do not pull `FenkoHQ/Foundation-Sec-8B:latest`. It is a 16 GB unquantized 
 
 ## Setup
 
-The setup for the sniffer would just need to be ran before loading on the website locally.
+The setup for the sniffer would just need to be ran before loading on the website locally. The wallet and .env file needed for the database is NOT pushed onto Github. Contact bazyarf@etown.edu for the wallet.
 
 ## Overall Setup
 
@@ -53,23 +53,21 @@ The setup for the sniffer would just need to be ran before loading on the websit
 sudo python sniffer.py -i (interface) -c 50 -o capture.csv
 ```
 
-**Step 2 — Score traffic and flag anomalies:**
+**Step 2 — Install libraries:**
 ```bash
-python score_flows.py
+pip install -r database/requirements.txt
 ```
-Output: `scored_flows.csv` and `flagged_events.csv`
 
-**Step 3 — Generate plain-language explanations (Ollama must be running):**
+**Step 3 - Run test connection for database:**
 ```bash
-python llm_explain.py
+python database/test_connection.py
 ```
-Output: `alerts.json`
+If the connection is successful, you are good to go to the next step. If not, then contact bazyarf@etown.edu to add your IP under the database allowed to connect
 
-**Step 4 — View the dashboard:**
+**Step 4 - Run program:**
 ```bash
-python -m http.server 8000
+python database/app.py
 ```
-Then open your browser and go to `http://localhost:8000`
 
 # Deployment
 
